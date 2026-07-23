@@ -4,10 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">
+ 
 </head>
-<body>
-    <h1>AmaRE</h1>
-    <h1>le site est super beau</h1>
+
+<style>
+
+
+/*le bandeaux à gauche*/ 
     
+    .ancre {
+        display: block;
+        margin: 5%;
+        color:white;
+        font-family: sans-serif;
+        text-decoration-line: none;
+        font-weight: 700;
+        text-align: left;
+        padding : 3%; 
+        line-height: 1.5;
+    }
+
+    .ancre:hover {
+  background-color: #002750;
+}
+
+
+    #lateral-panel-bloc {
+        /*-- positions et dimensions --*/
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 15%;
+        height: 100%;
+        border-right: 1px solid #003893;
+        background: #003893;
+        }
+    
+    #logo-association {
+         
+        margin:7.5% 7.5%;   
+        width: 85%;
+       
+    }
+    
+/*le corps de page*/
+    h1 {
+        
+        font-family: 'Barrio', sans-serif;
+        font-size: 400%;
+    }
+
+    h3 {
+        margin : 3%;
+        margin-left : 5%;
+        font-family:  'Barrio', sans-serif;
+        font-size :200%;
+    }
+
+    p {
+        margin : 8%; 
+        margin-top: 3%;
+        font-size : 130%;
+        font-family : sans-serif; 
+        color: black;
+        text-align : left;
+        line-height: 1.3;
+
+    }
+
+    #p_contact {
+        line-height: 2;
+    }
+
+    body { 
+        background-color: #FFF;
+        color :black;
+        }
+
+    #image-crabe {
+        mask-image: linear-gradient(to bottom, black 75%,transparent);
+    }
+
+    nav{
+        height: 60px;
+        background-color: black;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .links-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    }
+    nav a:hover{
+    background-color: var(--accent-color);
+    }
+    nav .home-link{
+    margin-right: auto;
+    }
+    nav svg{
+    fill: var(--text-color);
+    }
+    #sidebar-active{
+    display: none;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+    display: none;
+    }
+    @media(max-width: 450px){
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    }
+
+
+
+</style>
+
+<body style="margin : 0; padding-left: 15%">
+
+
+    <nav>
+        <input type="checkbox" id ="sidebar-active">
+        <label for="sidebar-active">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg>
+        </label>
+
+        <div class="links-container">
+            <label for="sidebar-active">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M120-240v-66.67h520V-240H120Zm673.33-48L600.67-480.67l192-192L840-625.33 695.33-480.67l145.34 145.34L793.33-288ZM120-448v-66.67h400V-448H120Zm0-205.33V-720h520v66.67H120Z"/></svg>
+            </label>
+        </div>
+
+    </nav>
+    <div id="lateral-panel-bloc" >
+
+        <img 
+            id="logo-association"
+            src="images/logo_texte_barrio_dessous.png"
+            alt="logo de l'association">
+        </img>
+        
+        <br>
+
+        <a class="ancre" href="#projet">Notre projet</a>
+
+
+        <a class="ancre" href="#activites">Nos activités</a>
+        
+        <a class="ancre" href="#equipe">L'équipe</a>
+
+        <a class="ancre" href="#objectifs">Nos objectifs</a>
+
+        <a class="ancre" href="#soutenir">Nous soutenir</a>
+
+        <a class="ancre" href="#contact">Contact</a>
+
+        <a class="ancre" href="#partenaire">Nos Partenaires</a>
+
+        <img 
+            id="icone_insta"
+            src="images/icone_insta.webp"
+        >
+
+
+    </div>
+
+
+    <div style="position: relative; display: inline-block;">
+        <img
+            id="image-crabe" 
+            src="images/crabe_amare.jpeg" 
+            style="width: 100%">
+        
+        <h1 
+            style="position: absolute; 
+            top: 5%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white; ">
+                PROJET AMARE   
+        </h1>
+        
+    </div>
+
+    <br>
+
+    
+    <h3 id="projet">Notre projet</h3>
+
+    <p id="p_projet"> 
+Tant qu’il existera, par le fait des lois et des
+mœurs, une damnation sociale créant
+artificiellement, en pleine civilisation, des enfers,
+et compliquant d’une fatalité humaine la destinée
+qui est divine ; tant que les trois problèmes du
+siècle, la dégradation de l’homme par le
+prolétariat, la déchéance de la femme par la faim,
+l’atrophie de l’enfant par la nuit, ne seront pas
+résolus ; tant que, dans de certaines régions,
+l’asphyxie sociale sera possible ; en d’autres
+termes, et à un point de vue plus étendu encore,
+tant qu’il y aura sur la terre ignorance et misère,
+des livres de la nature de celui-ci pourront ne pas
+être inutiles. 
+    </p>
+
+    <h3 id="activites">Nos activités</h3>
+    
+    <h3 id="equipe">L'équipe</h3>
+
+    <h3 id="objectifs">Nos objectifs</h3>
+
+    <h3 id="soutenir">Nous soutenir</h3>
+
+    <h3 id="contact">Contact</h3>
+
+    <p id="p_contact">
+    <strong>Mail :</strong> amare.cap240@gmail.com <br>
+    <strong>Instagram :</strong> <a href="https://www.instagram.com/amare_cap240/">@AmaRE</a><br>
+    <strong>Linkedin :</strong> 
+    </p>
+
+    <h3 id="partenaire">Nos Partenaires</h3>
 </body>
 </html>
