@@ -1,0 +1,150 @@
+/*le bandeaux à gauche*/ 
+    
+svg, img {
+        display: block;
+}
+
+.ancre {
+        display: block;
+        margin: 5%;
+        color:white;
+        font-family: sans-serif;
+        text-decoration-line: none;
+        font-weight: 700;
+        text-align: left;
+        padding : 3%; 
+        line-height: 1.5;
+}
+
+.ancre:hover {
+  background-color: #002750;
+}
+
+
+#lateral-panel-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        padding: 0;
+    }
+
+#lateral-panel-bloc {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background: #003893;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+#lateral-panel-active:checked ~ #lateral-panel-bloc {
+    transform: translateX(0);
+}
+
+.carrond {
+    z-index: 1000;
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    background: #003893;
+    clip-path: url(#carrond);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.carrond:hover {
+    background-color: #002750;
+}
+
+.barre {
+    width: 45%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+      
+#logo-association {
+        margin:7.5% 7.5%;   
+        width: 85%;   
+}
+    
+#bouton {
+    position : fixed;
+    left : 15%;
+    transform: translateX(-350%);
+    transition: transform 0.3s ease-out;
+}
+
+#lateral-panel-active:checked ~ #bouton {
+    transform: translateX(0%);
+}
+
+
+
+
+/*le corps de page*/
+
+#main-content {
+        padding-left: 15%;
+        transition: padding-left 0.3s ease-out;
+}
+
+#lateral-panel-active:not(:checked) ~ #main-content {
+        padding-left: 0;
+}
+
+h1 {
+        
+        font-family: 'Barrio', sans-serif;
+        font-size: 400%;
+}
+
+h3 {
+        margin : 3%;
+        margin-left : 5%;
+        font-family:  'Barrio', sans-serif;
+        font-size :200%;
+}
+
+p {
+        margin : 8%; 
+        margin-top: 3%;
+        font-size : 130%;
+        font-family : sans-serif; 
+        color: black;
+        text-align : left;
+        line-height: 1.3;
+
+}
+
+#p_contact {
+        line-height: 2;
+}
+
+body { 
+        background-color: #FFF;
+        color :black;
+    }
+
+#image-crabe {
+        mask-image: linear-gradient(to bottom, black 75%,transparent);
+}
+
+    
